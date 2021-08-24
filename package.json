@@ -1,0 +1,51 @@
+{
+  "name": "url-mixer",
+  "version": "0.1.0",
+  "description": "Simple library to manipulate URLs.",
+  "keywords": [
+    "url",
+    "uri",
+    "get",
+    "address"
+  ],
+  "license": "MIT",
+  "deprecated": false,
+  "author": {
+    "name": "Alco",
+    "email": "head@alclab.pro",
+    "url": "http://alclab.pro/"
+  },
+  "homepage": "https://github.com/Alcohol120/URLMixer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alcohol120/URLMixer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alcohol120/URLMixer/issues"
+  },
+  "main": "./builds/npm/index.js",
+  "types": "./builds/npm/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "build": "npm run build:npm && npm run build:web",
+    "build:npm": "npx tsc -p tsconfig.npm.json && npx tsc-alias -p tsconfig.npm.json",
+    "build:web": "npm run build:web:dev && npm run build:web:prod",
+    "build:web:dev": "npx webpack --env development",
+    "build:web:prod": "npx webpack --env production",
+    "prepublishOnly": "npx rum build"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "fork-ts-checker-webpack-plugin": "^6.3.2",
+    "jest": "^27.0.6",
+    "terser-webpack-plugin": "^5.1.4",
+    "ts-jest": "^27.0.5",
+    "ts-loader": "^9.2.5",
+    "ts-node": "^10.2.1",
+    "tsc-alias": "^1.3.9",
+    "typescript": "^4.3.5",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  }
+}
